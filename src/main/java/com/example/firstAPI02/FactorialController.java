@@ -11,7 +11,6 @@ public class FactorialController {
 
     @GetMapping("/{n}")
     public Integer factorial(@PathVariable Integer n) {
-       n = 4;
        Integer factorial = n * 3*2*1;
         return factorial;
     }
