@@ -10,8 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class FactorialController {
 
     @GetMapping("/{n}")
-    public Integer factorial(@PathVariable Integer n) {
-       Integer factorial = n * 3*2*1;
-        return factorial;
+    public int factorial(@PathVariable int n) {
+       int factorial = 1;
+        if(n < 0){
+            factorial = 0;
+        }else{
+            for(int i=0; i<n; i++){
+                factorial *= (i+1);
+            }
+        }return factorial;
     }
 }
